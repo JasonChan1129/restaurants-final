@@ -1,0 +1,24 @@
+{
+	"name": "restaurant",
+	"version": "1.0.0",
+	"description": "",
+	"main": "app.js",
+	"scripts": {
+		"start": "node app.js",
+		"dev": "nodemon app.js",
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"seed": "node models/seeds/restaurantsSeeder.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"@googlemaps/google-maps-services-js": "^3.3.12",
+		"dotenv": "^16.0.0",
+		"express": "^4.17.3",
+		"express-handlebars": "^3.0.0",
+		"method-override": "^3.0.0",
+		"mongoose": "^5.9.7",
+		"nodemon": "^2.0.16"
+	}
+}
