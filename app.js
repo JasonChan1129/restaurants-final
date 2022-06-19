@@ -1,6 +1,8 @@
 const express = require('express');
 const exphbs = require('express-handlebars');
 const methodOverride = require('method-override');
+const session = require('express-session');
+const usePassport = require('./config/passport');
 
 const routes = require('./routes');
 // connect to mongoDB
@@ -16,6 +18,14 @@ app.set('view engine', 'handlebars');
 
 // middleware
 app.use(express.static('public'));
+app.use(
+	session({
+		secret: 'ThisIsMySecret',
+		resave: false,
+		saveUninitialized: true,
+	})
+);
+usePassport(app);
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.use(routes);
