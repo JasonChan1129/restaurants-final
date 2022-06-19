@@ -30,10 +30,16 @@
 						/>
 						我的餐廳清單
 					</a>
+					{{#if isAuthenticated}}
+						<a class='btn btn-outline-dark' href='/users/logout'>Logout</a>
+					{{else}}
+						<a class='btn btn-outline-dark' href='/users/login'>Login</a>
+					{{/if}}
 				</div>
 			</nav>
-
-			<div class='banner'></div>
+			{{#if isAuthenticated}}
+				<div class='banner'></div>
+			{{/if}}
 		</header>
 
 		{{{body}}}
