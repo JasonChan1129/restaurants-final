@@ -23,7 +23,7 @@ router.post('/register', (req, res) => {
 	const errors = [];
 
 	// if missing fields
-	if (!username || !email || !password || !confirmPassword) {
+	if (!email || !password || !confirmPassword) {
 		errors.push({ message: 'All fields are required.' });
 	}
 	// if password and confirm password not matched
